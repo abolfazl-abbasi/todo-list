@@ -1,0 +1,202 @@
+@import './colors';
+
+@keyframes skewing {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  20% {
+    transform: scale(1, .7);
+  }
+
+  40% {
+    transform: scale(1, 1.3);
+  }
+
+  60% {
+    transform: scale(1, 1);
+  }
+
+  80% {
+    transform: scale(1, 1.1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.todoApp {
+  max-width: 50rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+  background-color: $purple_0;
+  border-radius: 16px;
+  padding: 1.25rem;
+
+  .heading {
+    font-size: 40px;
+    font-family: cursive;
+    display: inline-block;
+    font-weight: 600;
+    margin: 2.5px;
+
+    &:nth-child(5) {
+      margin: 6px;
+    }
+  }
+
+  .one {
+    &:hover {
+      animation: skewing 1s ease;
+      color: $blue_400;
+    }
+  }
+
+  .two {
+    &:hover {
+      animation: skewing 1s ease;
+      color: $red_500;
+    }
+  }
+
+  .three {
+    &:hover {
+      animation: skewing 1s ease;
+      color: $teal_500;
+    }
+  }
+
+  .four {
+    &:hover {
+      animation: skewing 1s ease;
+      color: $amber_400;
+    }
+  }
+
+  .five {
+    &:hover {
+      animation: skewing 1s ease;
+      color: $emerald_500;
+    }
+  }
+}
+
+
+.form {
+  width: 58rem;
+  width: 100%;
+
+  .input {
+    width: 25rem;
+    background-color: $purple_200;
+    border-color: transparent;
+    transition: .2s;
+    margin: 10px 10px 10px 0;
+    transition: 2px;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    &:focus {
+      background-color: $violet_200;
+      border: 2px solid $purple_700;
+      outline: none;
+    }
+
+  }
+
+  .subBtn {
+    padding: 7px 14px;
+    border: none;
+    background-color: $purple_500;
+    border-radius: 5px;
+    color: white;
+    transition: .2s;
+
+    &:hover {
+      background-color: $purple_600;
+    }
+  }
+}
+
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $blue_300;
+  padding: 15px;
+  margin: 0 0 10px;
+  border-radius: 8px;
+  transition: .3s cubic-bezier(0.65, -0.25, 0.6, 1.17);
+
+  &:hover {
+    background-color: $blue_400;
+  }
+
+  .text {
+    max-width: 21rem;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .delete {
+    text-align: center;
+    padding: 7px 8px 6px;
+    border: none;
+    border-radius: 40px;
+    background-color: $red_200;
+    border: 1px solid $red_400;
+    color: $red_700;
+    margin: 0 4px;
+  }
+
+  .edit {
+    @extend .delete;
+    background-color: $purple_200;
+    color: $purple_700;
+    border-color: $purple_400;
+  }
+
+  .addEdit {
+    @extend .delete;
+    background-color: $green_200;
+    color: $green_700;
+    border-color: $green_700;
+  }
+
+  input {
+    max-width: 15rem;
+    width: 100%;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: $blue_200;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+.todo.complete {
+  background-color: $red_200;
+  opacity: .7;
+  transition: .3s cubic-bezier(0.65, -0.25, 0.6, 1.17);
+
+  &:hover {
+    background-color: $red_300;
+  }
+
+  .text {
+    text-decoration: line-through;
+    opacity: .7;
+  }
+}

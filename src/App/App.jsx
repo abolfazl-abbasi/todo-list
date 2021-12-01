@@ -1,12 +1,13 @@
-import React from 'react';
-import styles from './App.jsx-style/App.module.css';
+import React from "react";
+import styles from "./App.jsx-style/App.module.css";
+import TodoApp from "./../todo-app/todoApp";
 
 const App = () => {
   return (
     <>
-      <h1>Hello World</h1>
+      <TodoApp />
     </>
   );
-}
- 
+};
+
 export default App;
