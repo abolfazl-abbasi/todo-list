@@ -156,6 +156,7 @@
   margin: 0 0 10px;
   border-radius: 8px;
   transition: .3s cubic-bezier(0.65, -0.25, 0.6, 1.17);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   &:hover {
     background-color: $blue_400;
@@ -163,6 +164,7 @@
 
   .text {
     max-width: 21rem;
+    overflow-wrap: break-word;
     width: 100%;
     font-weight: 500;
     cursor: pointer;
@@ -248,6 +250,29 @@
     padding: 1rem 0.5rem;
     margin: 0 auto;
     border-radius: 0;
+  }
+
+  .todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $blue_300;
+    padding: 15px;
+    margin: 0 0 10px;
+    border-radius: 8px;
+    transition: .3s cubic-bezier(0.65, -0.25, 0.6, 1.17);
+
+    &:hover {
+      background-color: $blue_400;
+    }
+
+    .text {
+      max-width: 13rem;
+      overflow-wrap: break-word;
+      width: 100%;
+      font-weight: 500;
+      cursor: pointer;
+    }
   }
 
   .form {
