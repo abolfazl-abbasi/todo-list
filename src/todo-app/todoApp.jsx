@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./todo-app-style/todo.module.css";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
@@ -7,6 +7,8 @@ const TodoApp = () => {
   const [todo, setTodo] = useState([]);
   const [value, setValue] = useState("");
   const [editValue, setEditValue] = useState(value);
+
+  console.log(editValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
