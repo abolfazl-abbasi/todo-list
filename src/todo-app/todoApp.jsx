@@ -49,18 +49,7 @@ const TodoApp = () => {
   };
 
   const handleEditInput = (e, t) => {
-    // if (true) {
-    setTodo(
-      todo.map((to) => {
-        return (
-          <>
-            {(to.edit = false)}
-            {(t.edit = true)}
-          </>
-        );
-      })
-    );
-    // }
+    setTodo(todo.map((to) => `${(to.edit = false)} ${(t.edit = true)}`));
     if (true) {
       setEditValue(e.target.value);
     }
