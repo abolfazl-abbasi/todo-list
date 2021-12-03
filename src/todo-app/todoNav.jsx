@@ -27,6 +27,7 @@ const TodoNav = (props) => {
       <div className={`${styles.selectBox}`}>
         <select
           disabled={props.todo.length <= 0 && props.selectValue === "" ? true : false}
+          defaultValue={""}
           onChange={(e) => props.onSelected(e)}
           className={`${styles.select}`}
         >

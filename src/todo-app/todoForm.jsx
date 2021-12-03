@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from "./todo-app-style/todo.module.css";
 
 const TodoForm = (props) => {

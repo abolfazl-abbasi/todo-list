@@ -18,6 +18,7 @@ const TodoApp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(editValue);
     if (value === "") {
       return alert("Your input is null! 😕");
     }
