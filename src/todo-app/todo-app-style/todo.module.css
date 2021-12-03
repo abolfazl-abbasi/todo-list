@@ -292,6 +292,82 @@
   opacity: .7;
 }
 
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar .counter {
+  text-align: center;
+  padding: 4px 9px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: none;
+  border-radius: 40px;
+  background-color: #E9D5FF;
+  color: #7E22CE;
+  margin: 0 4px;
+  overflow: hidden;
+}
+
+.navbar .completeCounter {
+  text-align: center;
+  padding: 4px 9px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: none;
+  border-radius: 40px;
+  background-color: #FECACA;
+  color: #B91C1C;
+  margin: 0 4px;
+  overflow: hidden;
+}
+
+.navbar .counterHide {
+  display: none;
+}
+
+.selectBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 485px;
+  margin: 10px 0 0 0;
+}
+
+.selectBox .select {
+  border: none;
+  padding: 3px;
+  border-radius: 6px;
+  background-color: #F3E8FF;
+  color: #6B21A8;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.selectBox .select:focus {
+  outline: none;
+}
+
+.selectBox .select:hover {
+  background-color: #E9D5FF;
+}
+
+.selectBox .select:disabled {
+  background-color: #FEE2E2;
+  color: #F87171;
+}
+
 @media (max-width: 500px) {
   .todoApp {
     width: 100%;
@@ -352,6 +428,35 @@
   }
   .todoList {
     height: 100vh;
+  }
+  .selectBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 325px;
+    margin: 10px 0 0 0;
+  }
+  .selectBox .select {
+    border: none;
+    padding: 3px;
+    border-radius: 6px;
+    background-color: #F3E8FF;
+    color: #6B21A8;
+    -webkit-transition: .2s;
+    transition: .2s;
+  }
+  .selectBox .select:focus {
+    outline: none;
+  }
+  .selectBox .select:hover {
+    background-color: #E9D5FF;
+  }
+  .selectBox .select:disabled {
+    background-color: #FEE2E2;
+    color: #F87171;
   }
 }
 /*# sourceMappingURL=todo.module.css.map */

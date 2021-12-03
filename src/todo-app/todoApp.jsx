@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./todo-app-style/todo.module.css";
 import TodoForm from "./todoForm";
 import TodoList from "./todoList";
+import TodoNav from "./todoNav";
+// import _ from "lodash";
 
 const TodoApp = () => {
   const [todo, setTodo] = useState([]);
+  const [cloneTodo, setCloneTodo] = useState([...todo]);
   const [value, setValue] = useState("");
-  const [editValue, setEditValue] = useState(value);
+  const [selectValue, setSelectValue] = useState("");
+  const [editValue, setEditValue] = useState([...value]);
 
-  console.log(editValue);
+  useEffect(() => {
+    setCloneTodo([...todo]);
+  }, [todo]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +29,7 @@ const TodoApp = () => {
       edit: false,
     };
     setTodo([...todo, newTodo]);
+    setSelectValue("");
     setValue("");
   };
 
@@ -63,27 +70,37 @@ const TodoApp = () => {
     setTodo(updateTodo);
   };
 
+  const handleCounter = () => {
+    if (selectValue === "complete") {
+      return cloneTodo.filter((t) => t).length;
+    }
+    return cloneTodo.filter((t) => !t.isComplete).length;
+  };
+
+  const handleSelected = (e) => {
+    setSelectValue(e.target.value);
+    if (e.target.value === "") {
+      setCloneTodo(todo);
+    }
+    if (e.target.value === "complete") {
+      setCloneTodo(todo.filter((t) => t.isComplete));
+    }
+    if (e.target.value === "unComplete") {
+      setCloneTodo(todo.filter((t) => !t.isComplete));
+    }
+  };
+
   return (
     <>
       <div className={`${styles.todoApp}`}>
-        <div>
-          <span className={`${styles.heading} ${styles.one}`}>T</span>
-          <span className={`${styles.heading} ${styles.two}`}>O</span>
-          <span className={`${styles.heading} ${styles.one}`}>D</span>
-          <span className={`${styles.heading} ${styles.two}`}>O</span>
-          <span className={`${styles.heading} ${styles.three}`}> </span>
-          <span className={`${styles.heading} ${styles.four}`}>L</span>
-          <span className={`${styles.heading} ${styles.three}`}>I</span>
-          <span className={`${styles.heading} ${styles.four}`}>S</span>
-          <span className={`${styles.heading} ${styles.five}`}>T</span>
-        </div>
+        <TodoNav todo={cloneTodo} selectValue={selectValue} onSelected={handleSelected} onCounter={handleCounter} />
         <div>
           <TodoForm onFormSubmit={handleSubmit} onInputValue={handleInput} inputValue={value} />
           <TodoList
             onEditInput={handleEditInput}
             onComplete={handleComplete}
             onDelete={handleDelete}
-            todo={todo}
+            todo={cloneTodo}
             onEdit={handleEdit}
           />
         </div>

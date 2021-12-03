@@ -3,9 +3,6 @@ import styles from "./todo-app-style/todo.module.css";
 
 const TodoForm = (props) => {
   const todoInput = useRef();
-  useEffect(() => {
-    todoInput.current.focus();
-  }, []);
   return (
     <form onSubmit={(e) => props.onFormSubmit(e)} className={`${styles.form}`}>
       <input

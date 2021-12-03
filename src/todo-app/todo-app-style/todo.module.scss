@@ -240,6 +240,71 @@
   }
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .counter {
+    text-align: center;
+    padding: 4px 9px;
+    align-self: flex-start;
+    border: none;
+    border-radius: 40px;
+    background-color: $purple_200;
+    color: $purple_700;
+    margin: 0 4px;
+    overflow: hidden;
+  }
+
+  .completeCounter {
+    text-align: center;
+    padding: 4px 9px;
+    align-self: flex-start;
+    border: none;
+    border-radius: 40px;
+    background-color: $red_200;
+    color: $red_700;
+    margin: 0 4px;
+    overflow: hidden;
+  }
+
+  .counterHide {
+    display: none;
+  }
+}
+
+.selectBox {
+  display: flex;
+  align-items: center;
+  width: 485px;
+  margin: 10px 0 0 0;
+
+  .select {
+    border: none;
+    padding: 3px;
+    border-radius: 6px;
+    background-color: $purple_100;
+    color: $purple_800;
+    transition: .2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $purple_200;
+    }
+
+    &:disabled {
+      background-color: $red_100;
+      color: $red_400;
+    }
+
+
+  }
+}
+
 @media (max-width:500px) {
   .todoApp {
     width: 100%;
@@ -292,6 +357,37 @@
 
   .todoList {
     height: 100vh;
+  }
+
+  .selectBox {
+    display: flex;
+    align-items: center;
+    width: 325px;
+    margin: 10px 0 0 0;
+
+    .select {
+      border: none;
+      padding: 3px;
+      border-radius: 6px;
+      background-color: $purple_100;
+      color: $purple_800;
+      transition: .2s;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: $purple_200;
+      }
+
+      &:disabled {
+        background-color: $red_100;
+        color: $red_400;
+      }
+
+
+    }
   }
 
 }
